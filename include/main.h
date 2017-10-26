@@ -27,6 +27,9 @@
 
 #include <API.h>
 
+//Include All Vars
+#include "KBotVars.hpp"
+
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
 extern "C" {
