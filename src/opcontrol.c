@@ -32,10 +32,92 @@
 void operatorControl() {
 	while (1) {
 		int power, turn;
-		power = joystickGetAnalog(1, 2); // vertical axis on left joystick
-		turn  = joystickGetAnalog(1, 1); // horizontal axis on left joystick
-		motorSet(2, power + turn); // set left wheels
-		motorSet(3, power - turn); // set right wheels
+		/*
+		Start of base
+		*/
+		power = joystickGetAnalog(1, 1); //horizontal axis on left joystick
+		turn  = joystickGetAnalog(1, 2); //vertical axis on left joystick
+		motorSet(LeftBaseFrontBackMotors, power + turn); //set left wheels
+		motorSet(RightBaseBackMotor , power - turn); //set right back wheel
+		motorSet(RightBaseFrontMotor, power - turn);//set right front wheel
+		/*
+		End of base
+		*/
+
+		/*
+		Start of lift
+		*/
+		// add the following logic:
+	 if(joystickGetDigital(1, 6, JOY_UP)) {
+		 motorSet(LeftTopBottomLiftMotors, 127);
+		 motorSet(RightTopLiftMotor, -127);
+		 motorSet(RightBottomLiftMotor, -127);
+	 }
+	 else if(joystickGetDigital(1, 6, JOY_DOWN)) {
+		 motorSet(LeftTopBottomLiftMotors, -127);
+		 motorSet(RightTopLiftMotor, 127);
+		 motorSet(RightBottomLiftMotor, 127);
+	 }
+	 else {
+		 motorSet(LeftTopBottomLiftMotors, 0);
+		 motorSet(RightTopLiftMotor, 0);
+		 motorSet(RightBottomLiftMotor, 0);
+	 }
+		/*
+		End of lift
+		*/
+
+		/*
+		Start of intake lift
+		*/
+		if(joystickGetDigital(1, 8, JOY_UP)) {
+			motorSet(IntakeLiftMotor, -127);
+		}
+		else if(joystickGetDigital(1, 8, JOY_DOWN)) {
+			motorSet(IntakeLiftMotor, 127);
+		}
+		else {
+			motorSet(IntakeLiftMotor, 0);
+		}
+		/*
+		End of intake lift
+		*/
+
+		/*
+		Start of Intake
+		*/
+		if(joystickGetDigital(1, 8, JOY_LEFT)) {
+			motorSet(IntakeMotor, 127);
+		}
+		else if(joystickGetDigital(1, 8, JOY_RIGHT)) {
+			motorSet(IntakeMotor, -127);
+		}
+		else {
+			motorSet(IntakeMotor, 0);
+		}
+		/*
+		End of Intake
+		*/
+
+		/*
+		Start of base mover
+		*/
+		if(joystickGetDigital(1, 5, JOY_UP)) {
+			motorSet(LeftBaseMotor, -127);
+			motorSet(RightBaseMotor, 127);
+		}
+		else if(joystickGetDigital(1, 5, JOY_DOWN)) {
+			motorSet(LeftBaseMotor, 127);
+			motorSet(RightBaseMotor, -127);
+		}
+		else {
+			motorSet(LeftBaseMotor, 0);
+			motorSet(RightBaseMotor, 0);
+		}
+		/*
+		End of base mover
+		*/
+
 		 delay(20);
 	}
 }

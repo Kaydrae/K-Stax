@@ -44,3 +44,29 @@ static const unsigned int UltrasonicInput = 8;
 
 //Driver 1 = Base and base pickup
 //Driver 2 = Everything else
+
+
+/*
+for arduino
+Left Ultrasonic
+Echo = 4
+Trig = 3
+
+
+Right Ultrasonic
+Echo = 5
+Trig = 6
+
+Middle Ultrasonic
+Echo = 12
+Trig = 13
+
+Camera
+i2c
+
+Left in/out = 7
+Right in/out = 8
+Forward in/out = 9
+Back in/out = 10
+Stop in/out = 11
+*/
