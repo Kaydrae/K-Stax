@@ -2,7 +2,7 @@
 All Motors are declared here.
 */
 //Note 4 and 5 Need only one IME Because they work as one
-static const unsigned int LeftBaseMotor                   = 1;
+static const unsigned int LeftBaseLiftMotor               = 1;
 static const unsigned int RightTopLiftMotor               = 2;// 6C
 static const unsigned int RightBottomLiftMotor            = 3;// 5C
 static const unsigned int LeftTopBottomLiftMotors         = 4;// Left Top And Bottom Lift Motors A and B on power Expander 2C
@@ -11,7 +11,7 @@ static const unsigned int RightBaseBackMotor              = 6;// 3C
 static const unsigned int RightBaseFrontMotor             = 7;// 4C
 static const unsigned int IntakeLiftMotor                 = 8;// 7C
 static const unsigned int IntakeMotor                     = 9;// 8C
-static const unsigned int RightBaseMotor                  = 10;
+static const unsigned int RightBaseLiftMotor              = 10;
 
 /*
 All Sensors are declared here.
@@ -36,8 +36,8 @@ static const unsigned int RightLimitSwitch                = 10;
 static const unsigned int RobotGyro                       = 11;
 static const unsigned int BasePot                         = 1;//Analog
 
-static const unsigned int UltrasonicOutput =12;
-static const unsigned int UltrasonicInput = 8;
+static const unsigned int UltrasonicOutput                = 12;
+static const unsigned int UltrasonicInput                 = 8;
 
 //Arcade Drive
 //Two Drivers
