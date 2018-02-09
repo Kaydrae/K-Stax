@@ -20,6 +20,7 @@ LCD UART 2
 
 //static const unsigned String lcdPort = 'uart2';
 
+//IME Chain
 static const unsigned int IME_LeftBaseFrontBackMotors     = 1;
 static const unsigned int IME_LeftTopBottomLiftMotors     = 2;
 static const unsigned int IME_RightBaseBackMotor          = 3;
@@ -31,13 +32,27 @@ static const unsigned int IME_IntakeMotor                 = 8;
 
 static const unsigned int IME_Count                       = 8;
 
+//Output = Orange; Input = Yellow
+//Digital Ports
+static const unsigned int ArduinoDigitalPinOne            = 1;
+static const unsigned int RightFrontUntrasonicOutput      = 2;//O
+static const unsigned int RightFrontUntrasonicInput       = 3;//Y
+static const unsigned int LeftSidetUntrasonicOutput       = 4;
+static const unsigned int LeftSideUntrasonicInput         = 5;
+static const unsigned int RightSideUltrasonicInput        = 6;
+static const unsigned int RightSideUltrasonicOutput       = 7;
+static const unsigned int LeftFrontUltrasonicInput        = 8;
 static const unsigned int LeftLimitSwitch                 = 9;
 static const unsigned int RightLimitSwitch                = 10;
-static const unsigned int RobotGyro                       = 11;
+static const unsigned int LeftFrontUltrasonicOutput       = 11;
+static const unsigned int ArduinoDigitalPinTwo            = 12;
+
+//Analog Ports
+
+//static const unsigned int RobotGyro                       = 11;
 static const unsigned int BasePot                         = 1;//Analog
 
-static const unsigned int UltrasonicOutput                = 12;
-static const unsigned int UltrasonicInput                 = 8;
+
 
 //Arcade Drive
 //Two Drivers
@@ -48,25 +63,18 @@ static const unsigned int UltrasonicInput                 = 8;
 
 /*
 for arduino
-Left Ultrasonic
-Echo = 4
-Trig = 3
 
-
-Right Ultrasonic
-Echo = 5
-Trig = 6
-
-Middle Ultrasonic
-Echo = 12
-Trig = 13
+Arduino is just for camera.
 
 Camera
 i2c
 
-Left in/out = 7
-Right in/out = 8
-Forward in/out = 9
-Back in/out = 10
-Stop in/out = 11
+DigialPinOutOne = 2
+DigialPinOutTwo = 3
+
+
+Pi
+12 = GPIO20(38)
+1 = GPIO21(40)
+
 */

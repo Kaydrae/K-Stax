@@ -30,6 +30,21 @@
 //Include All Vars
 #include "KBotVars.hpp"
 
+//Include All Functions
+#include "Base.h"
+#include "BaseLift.h"
+#include "Intake.h"
+#include "Lift.h"
+
+//Ultrasonic
+Ultrasonic FrontLeftUltrasonic;
+Ultrasonic FrontRightUltrasonic;
+Ultrasonic RightSideUltrasonic;
+Ultrasonic LeftStideUltrasonic;
+
+//Include Test Code
+#include "IMETest.h"
+
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
 extern "C" {

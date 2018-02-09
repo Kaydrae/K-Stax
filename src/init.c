@@ -21,6 +21,8 @@
  * configure a UART port (usartOpen()) but cannot set up an LCD (lcdInit()).
  */
 void initializeIO() {
+    pinMode(LeftLimitSwitch, INPUT);
+    pinMode(RightLimitSwitch, INPUT);
 }
 
 /*
@@ -37,4 +39,14 @@ void initializeIO() {
  * can be implemented in this task if desired.
  */
 void initialize() {
+  FrontLeftUltrasonic   = ultrasonicInit(LeftFrontUltrasonicOutput, LeftFrontUltrasonicInput);
+  FrontRightUltrasonic  = ultrasonicInit(RightFrontUntrasonicOutput, RightFrontUntrasonicInput);
+  RightSideUltrasonic   = ultrasonicInit(RightSideUltrasonicOutput, RightSideUltrasonicInput);
+  LeftStideUltrasonic   = ultrasonicInit(LeftSidetUntrasonicOutput, LeftSideUntrasonicInput);
+  int IMECount = imeInitializeAll();
+  lcdInit(uart2);
+   analogCalibrate(BasePot);
+  if(IMECount != IME_Count){
+    print("IME Initialize Error");
+  }
 }

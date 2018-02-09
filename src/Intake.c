@@ -1,9 +1,9 @@
 #include "main.h"
-#include "Lift.h"
+#include "Intake.h"
 #include "KBotVars.hpp"
 
 //Intake Lift
-void IntakeiftUp(int speed){
+void IntakeLiftUp(int speed){
   	motorSet(IntakeLiftMotor, -speed);
 }
 
@@ -17,7 +17,7 @@ void IntakeLiftStop(){
 
 
 //Actual Intake
-void IntkeIn(int speed){
+void IntakeIn(int speed){
   motorSet(IntakeMotor, speed);
 }
 

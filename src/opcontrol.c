@@ -31,7 +31,16 @@
  */
 void operatorControl() {
 	while (1) {
-		int power, turn;
+		int power, turn, IME1, IME2, IME3, IME4, IME5, IME6, IME7, IME8;
+		imeGet(IME_LeftBaseFrontBackMotors, &IME1);
+		imeGet(IME_LeftTopBottomLiftMotors, &IME2);
+		imeGet(IME_RightBaseBackMotor, &IME3);
+		imeGet(IME_RightBaseFrontMotor, &IME4);
+		imeGet(IME_RightBottomLiftMotor, &IME5);
+		imeGet(IME_RightTopLiftMotor, &IME6);
+		imeGet(IME_IntakeLiftMotor, &IME7);
+		imeGet(IME_IntakeMotor, &IME8);
+		
 		/*
 		Start of base
 		*/
@@ -44,7 +53,90 @@ void operatorControl() {
 		End of base
 		*/
 
+		if(digitalRead(LeftLimitSwitch) || digitalRead(RightLimitSwitch) == LOW){
+			StopLift();
+		}
 
+	 //imeReset(IME_RIGHT_MOTOR);
+
+
+		/*
+		Start of Lift
+		*/
+		if(joystickGetDigital(1, 6, JOY_UP)){
+
+			SetLiftUp(255);
+
+		}else if(joystickGetDigital(1, 6, JOY_DOWN)){
+
+			SetLiftDown(255);
+
+		}else{
+			StopLift();
+		}
+		/*
+		End of Lift
+		*/
+
+		/*
+		Start of Base Lift
+		*/
+		if(joystickGetDigital(1, 5, JOY_UP)){
+
+			BaseMotorLiftUp(255);
+
+		}else if(joystickGetDigital(1, 5, JOY_DOWN)){
+
+			BaseMotorLiftDown(255);
+
+		}else{
+
+			BaseMotorLiftStop();
+
+		}
+		/*
+		End of Base Lift
+		*/
+
+		/*
+		Start of Intake Lift
+		*/
+		if(joystickGetDigital(1, 8, JOY_UP)){
+
+			IntakeLiftUp(255);
+
+		}else if(joystickGetDigital(1, 8, JOY_DOWN)){
+
+			IntakeLiftDown(255);
+
+		}else{
+
+			IntakeLiftStop();
+
+		}
+		/*
+		End of Intake Lift
+		*/
+
+		/*
+		Start of Intake
+		*/
+		if(joystickGetDigital(1, 8, JOY_LEFT)){
+
+			IntakeIn(255);
+
+		}else if(joystickGetDigital(1, 8, JOY_RIGHT)){
+
+			IntakeOut(255);
+
+		}else{
+
+			IntakeStop();
+
+		}
+		/*
+		End of Intake
+		*/
 		 delay(20);
 	}
 }

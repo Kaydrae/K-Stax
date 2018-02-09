@@ -1,13 +1,13 @@
 #ifndef _BASE_H_
 #define _BASE_H_
 
-void DriveForward();
+void DriveForward(int speed);
 
-void DriveBackward();
+void DriveBackward(int speed);
 
-void TurnLeft();
+void TurnLeft(int speed);
 
-void TurnRight();
+void TurnRight(int speed);
 
 void Stop();
 

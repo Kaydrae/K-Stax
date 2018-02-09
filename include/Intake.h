@@ -1,13 +1,13 @@
 #ifndef _INTAKE_H_
 #define _INTAKE_H_
 
-void IntakeiftUp(int speed);
+void IntakeLiftUp(int speed);
 
 void IntakeLiftDown(int speed);
 
 void IntakeLiftStop();
 
-void IntkeIn(int speed);
+void IntakeIn(int speed);
 
 void IntakeOut(int speed);
 
