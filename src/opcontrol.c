@@ -41,7 +41,17 @@ void operatorControl() {
 		imeGet(IME_RightTopLiftMotor, &IME6);//Lift
 		imeGet(IME_IntakeLiftMotor, &IME7);
 		imeGet(IME_IntakeMotor, &IME8);
-		print("Working");
+//Base mover All the was out pot = 4095 all thw way back = 2260
+
+printf("%s\n", " ");
+print("Intake: ");
+printf("%d", &IME8);
+
+printf("%s\n", " ");
+print("Intake Lift: ");
+printf("%d", &IME7);
+
+
 		/*
 		Start of base
 		*/
@@ -54,13 +64,41 @@ void operatorControl() {
 		End of base
 		*/
 
+/*
+		printf("%s\n", " ");
+		print("Pot: ");
+		printf("%d", analogRead(BasePot));
+*/
 		LeftFrontDist = ultrasonicGet(FrontLeftUltrasonic);
 		RightFrontDist = ultrasonicGet(FrontRightUltrasonic);
 		RightDist = ultrasonicGet(RightSideUltrasonic);
 		LeftDist = ultrasonicGet(LeftStideUltrasonic);
-		 printf("%d", LeftFrontDist);
+	/*
+		printf("%s\n", " ");
+		print("LeftFront: ");
+		printf("%d", LeftFrontDist);
 
-		if(digitalRead(LeftLimitSwitch) || digitalRead(RightLimitSwitch) == LOW){
+		printf("%s\n", " ");
+		print("RightFront: ");
+		printf("%d", RightFrontDist);
+
+		printf("%s\n", " ");
+		print("Left: ");
+		printf("%d", LeftDist);
+
+		printf("%s\n", " ");
+		print("Right: ");
+		printf("%d", RightDist);
+
+		printf("%s\n", " ");
+		print("RightLimit: ");
+		printf("%d", digitalRead(RightLimitSwitch));
+
+		printf("%s\n", " ");
+		print("LeftLimit: ");
+		printf("%d", digitalRead(LeftLimitSwitch));
+		*/
+		if(digitalRead(LeftLimitSwitch) == LOW || digitalRead(RightLimitSwitch) == LOW){
 			StopLift();
 		}
 

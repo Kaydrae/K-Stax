@@ -34,7 +34,7 @@ static const unsigned int IME_Count                       = 8;
 
 //Output = Orange; Input = Yellow
 //Digital Ports
-static const unsigned int ArduinoDigitalPinOne            = 1;
+static const unsigned int RPiDigitalPinOne            = 1;
 static const unsigned int RightFrontUntrasonicOutput      = 2;//O
 static const unsigned int RightFrontUntrasonicInput       = 3;//Y
 static const unsigned int LeftSidetUntrasonicOutput       = 4;
@@ -45,7 +45,7 @@ static const unsigned int LeftFrontUltrasonicInput        = 8;
 static const unsigned int LeftLimitSwitch                 = 9;
 static const unsigned int RightLimitSwitch                = 10;
 static const unsigned int LeftFrontUltrasonicOutput       = 11;
-static const unsigned int ArduinoDigitalPinTwo            = 12;
+static const unsigned int RPiDigitalPinTwo            = 12;
 
 //Analog Ports
 

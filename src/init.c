@@ -23,6 +23,8 @@
 void initializeIO() {
     pinMode(LeftLimitSwitch, INPUT);
     pinMode(RightLimitSwitch, INPUT);
+    pinMode(RPiDigitalPinOne, INPUT);
+    pinMode(RPiDigitalPinTwo, INPUT);
 }
 
 /*
@@ -39,6 +41,7 @@ void initializeIO() {
  * can be implemented in this task if desired.
  */
 void initialize() {
+  analogCalibrate(BasePot);
   FrontLeftUltrasonic   = ultrasonicInit(LeftFrontUltrasonicOutput, LeftFrontUltrasonicInput);
   FrontRightUltrasonic  = ultrasonicInit(RightFrontUntrasonicOutput, RightFrontUntrasonicInput);
   RightSideUltrasonic   = ultrasonicInit(RightSideUltrasonicOutput, RightSideUltrasonicInput);
