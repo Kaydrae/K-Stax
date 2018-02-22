@@ -1,6 +1,5 @@
 #include "main.h"
 #include "BaseLift.h"
-#include "KBotVars.hpp"
 
 void BaseMotorLiftUp(int speed){
   motorSet(LeftBaseLiftMotor, -speed);
@@ -13,6 +12,6 @@ void BaseMotorLiftDown(int speed){
 }
 
 void BaseMotorLiftStop(){
-  motorSet(LeftBaseLiftMotor, speed);
-  motorSet(RightBaseLiftMotor, speed);
+  motorSet(LeftBaseLiftMotor, 0);
+  motorSet(RightBaseLiftMotor, 0);
 }

@@ -1,6 +1,5 @@
 #include "main.h"
 #include "Intake.h"
-#include "KBotVars.hpp"
 
 //Intake Lift
 void IntakeLiftUp(int speed){

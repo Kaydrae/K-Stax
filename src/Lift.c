@@ -1,6 +1,5 @@
 #include "main.h"
 #include "Lift.h"
-#include "KBotVars.hpp"
 
 void SetLiftUp(int speed){
   motorSet(LeftTopBottomLiftMotors, speed);

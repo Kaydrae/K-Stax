@@ -42,9 +42,6 @@ Ultrasonic FrontRightUltrasonic;
 Ultrasonic RightSideUltrasonic;
 Ultrasonic LeftStideUltrasonic;
 
-//Include Test Code
-#include "IMETest.h"
-
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
 extern "C" {

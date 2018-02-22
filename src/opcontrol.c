@@ -32,15 +32,16 @@
 void operatorControl() {
 	while (1) {
 		int power, turn, IME1, IME2, IME3, IME4, IME5, IME6, IME7, IME8;
+		char LeftFrontDist, RightFrontDist, LeftDist, RightDist;
 		imeGet(IME_LeftBaseFrontBackMotors, &IME1);
-		imeGet(IME_LeftTopBottomLiftMotors, &IME2);
+		imeGet(IME_LeftTopBottomLiftMotors, &IME2);//Lift
 		imeGet(IME_RightBaseBackMotor, &IME3);
 		imeGet(IME_RightBaseFrontMotor, &IME4);
-		imeGet(IME_RightBottomLiftMotor, &IME5);
-		imeGet(IME_RightTopLiftMotor, &IME6);
+		imeGet(IME_RightBottomLiftMotor, &IME5);//Lift
+		imeGet(IME_RightTopLiftMotor, &IME6);//Lift
 		imeGet(IME_IntakeLiftMotor, &IME7);
 		imeGet(IME_IntakeMotor, &IME8);
-		
+		print("Working");
 		/*
 		Start of base
 		*/
@@ -52,6 +53,12 @@ void operatorControl() {
 		/*
 		End of base
 		*/
+
+		LeftFrontDist = ultrasonicGet(FrontLeftUltrasonic);
+		RightFrontDist = ultrasonicGet(FrontRightUltrasonic);
+		RightDist = ultrasonicGet(RightSideUltrasonic);
+		LeftDist = ultrasonicGet(LeftStideUltrasonic);
+		 printf("%d", LeftFrontDist);
 
 		if(digitalRead(LeftLimitSwitch) || digitalRead(RightLimitSwitch) == LOW){
 			StopLift();
@@ -66,6 +73,9 @@ void operatorControl() {
 		if(joystickGetDigital(1, 6, JOY_UP)){
 
 			SetLiftUp(255);
+
+			//if(IME)
+
 
 		}else if(joystickGetDigital(1, 6, JOY_DOWN)){
 
